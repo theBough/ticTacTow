@@ -12,3 +12,16 @@ html {
   border: solid 5px;
   text-align: center;
 }
+.difficulty{
+  color:#BC4749;
+  background-color:#A7C957;
+  font-size: 20px;
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #F2E8CF;
+  padding: 5px;
+  width: 300px;
+}
+
