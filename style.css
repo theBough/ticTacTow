@@ -1,0 +1,14 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #386641;
+  text-align: center;
+  justify-content: center;
+}
+.myTitle{
+  font-Size: 50px;
+  color: #BC4749;
+  background-color: #A7C957;
+  border: solid 5px;
+  text-align: center;
+}
