@@ -24,4 +24,8 @@ html {
   padding: 5px;
   width: 300px;
 }
+.btnClass{
+  font-size: 30px;
+  height: 50px
+}
 
