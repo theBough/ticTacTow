@@ -1,5 +1,7 @@
 var whoseTurn = "O"
+
 function makeGrid() {
+  document.getElementById("difficulty").style.visibility = "hidden"
   for (i = 0; i < 9; i++) {
     var btn = document.createElement("button");
     btn.setAttribute("type", "button");
