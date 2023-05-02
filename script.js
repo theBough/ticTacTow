@@ -19,4 +19,13 @@ var thisClick = function(){
     return 0;
   }
   thisBtn.innerHTML = whoseTurn;
+  switchTurn();
+}
+
+function switchTurn(){
+  if(whoseTurn == "O"){
+    whoseTurn = "X"
+  }else{
+    whoseTurn = "O"
+  }
 }
