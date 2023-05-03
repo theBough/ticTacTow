@@ -21,6 +21,9 @@ var thisClick = function(){
     return 0;
   }
   thisBtn.innerHTML = whoseTurn;
+  if(checkForWin()){
+    alert(whoseTurn + "wins the game!!")
+  }
   switchTurn();
 }
 
@@ -29,5 +32,13 @@ function switchTurn(){
     whoseTurn = "X"
   }else{
     whoseTurn = "O"
+  }
+}
+function checkForWin(){
+  var startingSquare = document.getElementById("0");
+  var secondSquare = document.getElementById("1");
+  var thirdSquare = document.getElementById("2");
+  if((startingSquare.innerHTML == secondSquare.innerHTML) && (secondSquare.innerHTML == thirdSquare.innerHTML)){
+    return true;
   }
 }
