@@ -38,7 +38,33 @@ function checkForWin(){
   var startingSquare = document.getElementById("0");
   var secondSquare = document.getElementById("1");
   var thirdSquare = document.getElementById("2");
-  if((startingSquare.innerHTML == secondSquare.innerHTML) && (secondSquare.innerHTML == thirdSquare.innerHTML)){
+  if((startingSquare.innerHTML == secondSquare.innerHTML)
+     && (secondSquare.innerHTML == thirdSquare.innerHTML)
+     && (startingSquare.innerHTML != "")
+    && (secondSquare.innerHTML != "")
+    && (thirdSquare.innerHTML != "")){
+    return true;
+  }
+
+   startingSquare = document.getElementById("3");
+   secondSquare = document.getElementById("4");
+   thirdSquare = document.getElementById("5");
+  if((startingSquare.innerHTML == secondSquare.innerHTML)
+     && (secondSquare.innerHTML == thirdSquare.innerHTML)
+     && (startingSquare.innerHTML != "")
+    && (secondSquare.innerHTML != "")
+    && (thirdSquare.innerHTML != "")){
+    return true;
+  }
+
+  startingSquare = document.getElementById("6");
+   secondSquare = document.getElementById("7");
+   thirdSquare = document.getElementById("8");
+  if((startingSquare.innerHTML == secondSquare.innerHTML)
+     && (secondSquare.innerHTML == thirdSquare.innerHTML)
+     && (startingSquare.innerHTML != "")
+    && (secondSquare.innerHTML != "")
+    && (thirdSquare.innerHTML != "")){
     return true;
   }
 }
