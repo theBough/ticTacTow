@@ -35,6 +35,11 @@ function switchTurn(){
   }
 }
 function checkForWin(){
+  if(checkForHorizontalWin() || checkForDiagonalWin() || checkForVerticalWin()){
+    return true;
+  }
+}
+function checkForHorizontalWin(){
   for( i=0 ; i<8 ; i += 3){
     var startingSquare = document.getElementById(i);
     var secondSquare = document.getElementById(i+1);
@@ -47,4 +52,43 @@ function checkForWin(){
       return true;
     }//end if
   }//end loop
+}
+function checkForVerticalWin(){
+   for( i=0 ; i<3 ; i += 1){
+    var startingSquare = document.getElementById(i);
+    var secondSquare = document.getElementById(i+3);
+    var thirdSquare = document.getElementById(i+6);
+    if((startingSquare.innerHTML == secondSquare.innerHTML)
+      && (secondSquare.innerHTML == thirdSquare.innerHTML)
+      && (startingSquare.innerHTML != "")
+      && (secondSquare.innerHTML != "")
+      && (thirdSquare.innerHTML != "")){
+      return true;
+    }//end if
+  }//end loop
+}
+function checkForDiagonalWin(){
+  //Checking diagonal topleft to bottom Right
+    var startingSquare = document.getElementById(0);
+    var secondSquare = document.getElementById(4);
+    var thirdSquare = document.getElementById(8);
+    if((startingSquare.innerHTML == secondSquare.innerHTML)
+      && (secondSquare.innerHTML == thirdSquare.innerHTML)
+      && (startingSquare.innerHTML != "")
+      && (secondSquare.innerHTML != "")
+      && (thirdSquare.innerHTML != "")){
+      return true;
+    }//end if
+
+  //Checking top Right to bottom left
+    startingSquare = document.getElementById(2);
+    secondSquare = document.getElementById(4);
+    thirdSquare = document.getElementById(6);
+    if((startingSquare.innerHTML == secondSquare.innerHTML)
+      && (secondSquare.innerHTML == thirdSquare.innerHTML)
+      && (startingSquare.innerHTML != "")
+      && (secondSquare.innerHTML != "")
+      && (thirdSquare.innerHTML != "")){
+      return true;
+    }//end if
 }
