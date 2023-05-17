@@ -29,7 +29,7 @@ var thisClick = function(){
 }//end function
 function aiTurn(){
   if(canAIWIn()){
-    
+    alert("Please Work")
   }else if(checkForBlock()){
     
   }else{
@@ -44,22 +44,25 @@ function canAIWIn(){
   /*we are looking for 2 taken spots and an open spot
   on any given row or column or diagonal
   */
-  var squareOne = document.getElementById("0")
-  var squareTwo = document.getElementById("1")
-  var squareThree = document.getElementById("2")
+  for(i=0; i<8 ; i += 3){
+    var squareOne = document.getElementById(i)
+    var squareTwo = document.getElementById(i+1)
+    var squareThree = document.getElementById(i+2)
 
-  if(squareOne.innerHTML == whoseTurn && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == ""){
-    squareThree.innerHTML = whoseTurn;
-    return true;
+    if(squareOne.innerHTML == whoseTurn && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == ""){
+      squareThree.innerHTML = whoseTurn;
+      return true;
+    }
+    if(squareOne.innerHTML == whoseTurn && squareTwo.innerHTML == "" && squareThree.innerHTML == whoseTurn){
+      squareTwo.innerHTML = whoseTurn;
+      return true;
+    }
+    if(squareOne.innerHTML == "" && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == whoseTurn){
+      squareThree.innerHTML = whoseTurn;
+      return true;
+    }
   }
-  if(squareOne.innerHTML == whoseTurn && squareTwo.innerHTML == "" && squareThree.innerHTML == whoseTurn){
-    squareTwo.innerHTML = whoseTurn;
-    return true;
-  }
-  if(squareOne.innerHTML == "" && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == whoseTurn){
-    squareThree.innerHTML = whoseTurn;
-    return true;
-  }
+  
 }
 function playRandom(){
   var rndNum = Math.random()*9
