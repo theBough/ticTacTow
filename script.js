@@ -37,6 +37,9 @@ function aiTurn(){
   }
   switchTurn();
 }
+function checkForBlock(){
+  
+}
 function canAIWIn(){
   /*we are looking for 2 taken spots and an open spot
   on any given row or column or diagonal
@@ -47,12 +50,15 @@ function canAIWIn(){
 
   if(squareOne.innerHTML == whoseTurn && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == ""){
     squareThree.innerHTML = whoseTurn;
+    return true;
   }
   if(squareOne.innerHTML == whoseTurn && squareTwo.innerHTML == "" && squareThree.innerHTML == whoseTurn){
     squareTwo.innerHTML = whoseTurn;
+    return true;
   }
   if(squareOne.innerHTML == "" && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == whoseTurn){
     squareThree.innerHTML = whoseTurn;
+    return true;
   }
 }
 function playRandom(){
