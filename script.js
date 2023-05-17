@@ -19,11 +19,22 @@ var thisClick = function(){
   if(thisBtn.innerHTML != ""){
     alert("That square is taken!!");
     return 0;
-  }
+  }//end if
   thisBtn.innerHTML = whoseTurn;
   if(checkForWin()){
     alert(whoseTurn + "wins the game!!")
-  }
+  }//end if
+  switchTurn();
+  aiTurn();
+}//end function
+function aiTurn(){
+  var rndNum = Math.random()*9
+  rndNum = Math.floor(rndNum)
+  while(document.getElementById(rndNum).innerHTML !==""){
+    rndNum = Math.random()*9
+    rndNum = Math.floor(rndNum)
+  }//end While Loop
+  document.getElementById(rndNum).innerHTML = whoseTurn;
   switchTurn();
 }
 
