@@ -28,6 +28,16 @@ var thisClick = function(){
   aiTurn();
 }//end function
 function aiTurn(){
+  if(canAIWIn()){
+    
+  }else if(checkForBlock()){
+    
+  }else{
+    playRandom()
+  }
+  switchTurn();
+}
+function playRandom(){
   var rndNum = Math.random()*9
   rndNum = Math.floor(rndNum)
   while(document.getElementById(rndNum).innerHTML !==""){
@@ -35,7 +45,6 @@ function aiTurn(){
     rndNum = Math.floor(rndNum)
   }//end While Loop
   document.getElementById(rndNum).innerHTML = whoseTurn;
-  switchTurn();
 }
 
 function switchTurn(){
