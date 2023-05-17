@@ -37,6 +37,24 @@ function aiTurn(){
   }
   switchTurn();
 }
+function canAIWIn(){
+  /*we are looking for 2 taken spots and an open spot
+  on any given row or column or diagonal
+  */
+  var squareOne = document.getElementById("0")
+  var squareTwo = document.getElementById("1")
+  var squareThree = document.getElementById("2")
+
+  if(squareOne.innerHTML == whoseTurn && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == ""){
+    squareThree.innerHTML = whoseTurn;
+  }
+  if(squareOne.innerHTML == whoseTurn && squareTwo.innerHTML == "" && squareThree.innerHTML == whoseTurn){
+    squareTwo.innerHTML = whoseTurn;
+  }
+  if(squareOne.innerHTML == "" && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == whoseTurn){
+    squareThree.innerHTML = whoseTurn;
+  }
+}
 function playRandom(){
   var rndNum = Math.random()*9
   rndNum = Math.floor(rndNum)
@@ -46,7 +64,6 @@ function playRandom(){
   }//end While Loop
   document.getElementById(rndNum).innerHTML = whoseTurn;
 }
-
 function switchTurn(){
   if(whoseTurn == "O"){
     whoseTurn = "X"
