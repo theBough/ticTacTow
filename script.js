@@ -44,10 +44,31 @@ function canAIWIn(){
   /*we are looking for 2 taken spots and an open spot
   on any given row or column or diagonal
   */
+
+  //Checking Horizontal
   for(i=0; i<8 ; i += 3){
     var squareOne = document.getElementById(i)
     var squareTwo = document.getElementById(i+1)
     var squareThree = document.getElementById(i+2)
+
+    if(squareOne.innerHTML == whoseTurn && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == ""){
+      squareThree.innerHTML = whoseTurn;
+      return true;
+    }
+    if(squareOne.innerHTML == whoseTurn && squareTwo.innerHTML == "" && squareThree.innerHTML == whoseTurn){
+      squareTwo.innerHTML = whoseTurn;
+      return true;
+    }
+    if(squareOne.innerHTML == "" && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == whoseTurn){
+      squareThree.innerHTML = whoseTurn;
+      return true;
+    }
+  }
+    //check for vertical
+   for(i=0; i<3 ; i += 1){
+    var squareOne = document.getElementById(i)
+    var squareTwo = document.getElementById(i+3)
+    var squareThree = document.getElementById(i+6)
 
     if(squareOne.innerHTML == whoseTurn && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == ""){
       squareThree.innerHTML = whoseTurn;
@@ -80,6 +101,7 @@ function switchTurn(){
     whoseTurn = "O"
   }
 }
+
 function checkForWin(){
   if(checkForHorizontalWin() || checkForDiagonalWin() || checkForVerticalWin()){
     return true;
