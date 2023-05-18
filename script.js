@@ -82,7 +82,41 @@ function canAIWIn(){
       squareThree.innerHTML = whoseTurn;
       return true;
     }
-  }
+  }//end loop
+  //check the 2 diagonals
+   var squareOne = document.getElementById(0)
+    var squareTwo = document.getElementById(4)
+    var squareThree = document.getElementById(8)
+
+    if(squareOne.innerHTML == whoseTurn && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == ""){
+      squareThree.innerHTML = whoseTurn;
+      return true;
+    }
+    if(squareOne.innerHTML == whoseTurn && squareTwo.innerHTML == "" && squareThree.innerHTML == whoseTurn){
+      squareTwo.innerHTML = whoseTurn;
+      return true;
+    }
+    if(squareOne.innerHTML == "" && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == whoseTurn){
+      squareThree.innerHTML = whoseTurn;
+      return true;
+    }//end if
+
+   var squareOne = document.getElementById(2)
+    var squareTwo = document.getElementById(4)
+    var squareThree = document.getElementById(6)
+
+    if(squareOne.innerHTML == whoseTurn && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == ""){
+      squareThree.innerHTML = whoseTurn;
+      return true;
+    }
+    if(squareOne.innerHTML == whoseTurn && squareTwo.innerHTML == "" && squareThree.innerHTML == whoseTurn){
+      squareTwo.innerHTML = whoseTurn;
+      return true;
+    }
+    if(squareOne.innerHTML == "" && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == whoseTurn){
+      squareThree.innerHTML = whoseTurn;
+      return true;
+    }//end if
   
 }
 function playRandom(){
