@@ -31,13 +31,94 @@ function aiTurn(){
   if(canAIWIn()){
     alert("Please Work")
   }else if(checkForBlock()){
-    
+     alert("BLOCK")
   }else{
     playRandom()
   }
   switchTurn();
 }
 function checkForBlock(){
+   /*we are looking for 2 taken spots and an open spot
+  on any given row or column or diagonal
+  */
+  var playerLetter;
+  if(whoseTurn == "X"){
+    playerLetter = "O"
+  }else{
+    playerLetter = ""
+  }
+  //Checking Horizontal
+  for(i=0; i<8 ; i += 3){
+    var squareOne = document.getElementById(i)
+    var squareTwo = document.getElementById(i+1)
+    var squareThree = document.getElementById(i+2)
+
+    if(squareOne.innerHTML == playerLetter && squareTwo.innerHTML == playerLetter && squareThree.innerHTML == ""){
+      squareThree.innerHTML = whoseTurn;
+      return true;
+    }
+    if(squareOne.innerHTML == playerLetter && squareTwo.innerHTML == "" && squareThree.innerHTML == playerLetter){
+      squareTwo.innerHTML = whoseTurn;
+      return true;
+    }
+    if(squareOne.innerHTML == "" && squareTwo.innerHTML == playerLetter && squareThree.innerHTML == playerLetter){
+      squareThree.innerHTML = whoseTurn;
+      return true;
+    }
+  }
+    //check for vertical
+   for(i=0; i<3 ; i += 1){
+    var squareOne = document.getElementById(i)
+    var squareTwo = document.getElementById(i+3)
+    var squareThree = document.getElementById(i+6)
+
+    if(squareOne.innerHTML == playerLetter && squareTwo.innerHTML == playerLetter && squareThree.innerHTML == ""){
+      squareThree.innerHTML = whoseTurn;
+      return true;
+    }
+    if(squareOne.innerHTML == playerLetter && squareTwo.innerHTML == "" && squareThree.innerHTML == playerLetter){
+      squareTwo.innerHTML = whoseTurn;
+      return true;
+    }
+    if(squareOne.innerHTML == "" && squareTwo.innerHTML == playerLetter && squareThree.innerHTML == playerLetter){
+      squareThree.innerHTML = whoseTurn;
+      return true;
+    }
+  }//end loop
+  //check the 2 diagonals
+   var squareOne = document.getElementById(0)
+    var squareTwo = document.getElementById(4)
+    var squareThree = document.getElementById(8)
+
+    if(squareOne.innerHTML == playerLetter && squareTwo.innerHTML == playerLetter && squareThree.innerHTML == ""){
+      squareThree.innerHTML = whoseTurn;
+      return true;
+    }
+    if(squareOne.innerHTML == playerLetter && squareTwo.innerHTML == "" && squareThree.innerHTML == playerLetter){
+      squareTwo.innerHTML = whoseTurn;
+      return true;
+    }
+    if(squareOne.innerHTML == "" && squareTwo.innerHTML == playerLetter && squareThree.innerHTML == playerLetter){
+      squareThree.innerHTML = whoseTurn;
+      return true;
+    }//end if
+
+   var squareOne = document.getElementById(2)
+    var squareTwo = document.getElementById(4)
+    var squareThree = document.getElementById(6)
+
+    if(squareOne.innerHTML == playerLetter && squareTwo.innerHTML == playerLetter && squareThree.innerHTML == ""){
+      squareThree.innerHTML = whoseTurn;
+      return true;
+    }
+    if(squareOne.innerHTML == playerLetter && squareTwo.innerHTML == "" && squareThree.innerHTML == playerLetter){
+      squareTwo.innerHTML = whoseTurn;
+      return true;
+    }
+    if(squareOne.innerHTML == "" && squareTwo.innerHTML == playerLetter && squareThree.innerHTML == playerLetter){
+      squareThree.innerHTML = whoseTurn;
+      return true;
+    }//end if
   
 }
 function canAIWIn(){
