@@ -1,4 +1,5 @@
 var whoseTurn = "O"
+var turnCount =1;
 
 function makeGrid() {
   document.getElementById("difficulty").style.visibility = "hidden"
@@ -33,7 +34,10 @@ function aiTurn(){
   }else if(checkForBlock()){
      alert("BLOCK")
   }else{
-    playRandom()
+    if(turnCount<9){
+      playRandom();
+    }
+    
   }
   switchTurn();
 }
@@ -214,6 +218,11 @@ function switchTurn(){
     whoseTurn = "X"
   }else{
     whoseTurn = "O"
+  }
+  turnCount += 1
+  if(turnCount == 10){
+    alert("tie Game")
+    return 0;
   }
 }
 
