@@ -81,7 +81,7 @@ function checkForBlock(){
       return true;
     }
     if(squareOne.innerHTML == "" && squareTwo.innerHTML == playerLetter && squareThree.innerHTML == playerLetter){
-      squareThree.innerHTML = whoseTurn;
+      squareOne.innerHTML = whoseTurn;
       return true;
     }
   }//end loop
@@ -99,7 +99,7 @@ function checkForBlock(){
       return true;
     }
     if(squareOne.innerHTML == "" && squareTwo.innerHTML == playerLetter && squareThree.innerHTML == playerLetter){
-      squareThree.innerHTML = whoseTurn;
+      squareOne.innerHTML = whoseTurn;
       return true;
     }//end if
 
@@ -116,7 +116,7 @@ function checkForBlock(){
       return true;
     }
     if(squareOne.innerHTML == "" && squareTwo.innerHTML == playerLetter && squareThree.innerHTML == playerLetter){
-      squareThree.innerHTML = whoseTurn;
+      squareOne.innerHTML = whoseTurn;
       return true;
     }//end if
   
@@ -141,7 +141,7 @@ function canAIWIn(){
       return true;
     }
     if(squareOne.innerHTML == "" && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == whoseTurn){
-      squareThree.innerHTML = whoseTurn;
+      squareOne.innerHTML = whoseTurn;
       return true;
     }
   }
@@ -160,7 +160,7 @@ function canAIWIn(){
       return true;
     }
     if(squareOne.innerHTML == "" && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == whoseTurn){
-      squareThree.innerHTML = whoseTurn;
+      squareOne.innerHTML = whoseTurn;
       return true;
     }
   }//end loop
@@ -178,7 +178,7 @@ function canAIWIn(){
       return true;
     }
     if(squareOne.innerHTML == "" && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == whoseTurn){
-      squareThree.innerHTML = whoseTurn;
+      squareOne.innerHTML = whoseTurn;
       return true;
     }//end if
 
@@ -195,7 +195,7 @@ function canAIWIn(){
       return true;
     }
     if(squareOne.innerHTML == "" && squareTwo.innerHTML == whoseTurn && squareThree.innerHTML == whoseTurn){
-      squareThree.innerHTML = whoseTurn;
+      squareOne.innerHTML = whoseTurn;
       return true;
     }//end if
   
